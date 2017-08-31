@@ -1,0 +1,21 @@
+{
+    use esmith::ConfigDB;
+    use esmith::util;
+    my $confdb = esmith::ConfigDB->open;
+    my $evebox = $confdb->get('evebox') or die "No evebox db entry found\n";
+    my $alias = $evebox->prop('alias') || "";
+    my $port = $evebox->prop('TCPPort') || "5636";
+
+    # initialize alias if needed
+    if ($alias eq "") {
+        $alias = esmith::util::genRandomHash();
+        $confdb->set_prop('evebox','alias',$alias);
+    }
+
+    $OUT .= "RewriteEngine on\n";
+    $OUT .= "RewriteRule ^/$alias\$ /$alias/ [R]\n";
+
+    $OUT .= "ProxyPass /$alias http://localhost:$port\n";
+    $OUT .= "ProxyPassReverse /$alias http://localhost:$port\n";
+}
+

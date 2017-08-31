@@ -1,0 +1,27 @@
+data-directory: /var/lib/evebox
+
+http:
+  tls:
+    enabled: false
+  reverse-proxy: true
+
+database:
+  type: sqlite
+
+authentication:
+  required: no
+
+input:
+  enabled: true
+  filename: "/var/log/suricata/eve.json"
+
+geoip:
+  disabled: false
+
+event-services:
+
+  - type: custom
+    enabled: true
+    name: ET
+    url: http://doc.emergingthreats.net/\{\{alert.signature_id\}\}
+
