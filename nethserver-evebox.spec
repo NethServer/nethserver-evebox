@@ -1,6 +1,6 @@
 Summary: NethServer configuration for EveBox
 Name: nethserver-evebox
-Version: 0.0.1
+Version: 1.0.0
 Release: 1%{?dist}
 License: GPL
 URL: %{url_prefix}/%{name} 
@@ -38,3 +38,6 @@ mkdir -p %{buildroot}/var/lib/evebox
 %dir %attr(0755, suricata, suricata) /var/lib/evebox
 
 %changelog
+* Fri Oct 06 2017 Giacomo Sanchietti <giacomo.sanchietti@nethesis.it> - 1.0.0-1
+- EveBox NethServer/dev#5346
+
