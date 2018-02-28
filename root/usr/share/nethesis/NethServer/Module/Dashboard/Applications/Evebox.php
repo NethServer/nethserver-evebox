@@ -39,8 +39,7 @@ class Evebox extends \Nethgui\Module\AbstractModule implements \NethServer\Modul
         $host = explode(':',$_SERVER['HTTP_HOST']);
         $alias = $configDb->getProp('evebox', 'alias');
         return array(
-            'url' => "https://".$host[0].":980/$alias",
-            'status' => $configDb->getProp('evebox', 'status')
+            'url' => "/".$alias
             );
     }
 }
