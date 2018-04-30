@@ -39,3 +39,6 @@ fi
 if [ ! -f /etc/evebox/GeoLite2-City.mmdb.gz ]; then
     /etc/cron.weekly/evebox-geoip
 fi
+
+# Make sure working directory has correct permissions
+chown suricata:suricata /var/lib/evebox/
