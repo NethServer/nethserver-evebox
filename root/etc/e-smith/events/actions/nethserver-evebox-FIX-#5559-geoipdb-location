@@ -1,0 +1,8 @@
+#!/bin/bash
+
+# Aug 2018 : fix #5559
+# (you can safly remove me after a few update cycles)
+#
+# remove db in /etc/evebox/
+
+rm -rf /etc/evebox/GeoLite2-City.mmdb.gz >/dev/null 2>&1

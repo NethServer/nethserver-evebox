@@ -36,7 +36,7 @@ if [ ! -f $bookmark ]; then
 fi
 
 # Download GeoIP database if doesn't exists
-if [ ! -f /etc/evebox/GeoLite2-City.mmdb.gz ]; then
+if [ ! -f /usr/share/GeoIP/GeoLite2-City.mmdb ]; then
     /etc/cron.weekly/evebox-geoip
 fi
 
