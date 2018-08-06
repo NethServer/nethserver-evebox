@@ -42,3 +42,11 @@ fi
 
 # Make sure working directory has correct permissions
 chown suricata:suricata /var/lib/evebox/
+
+
+# Aug 2018 : fix #5559
+# (you can safely remove me after a few update cycles)
+# remove db in /etc/evebox/
+if [  -f /etc/evebox/GeoLite2-City.mmdb.gz ]; then
+    rm -f /etc/evebox/GeoLite2-City.mmdb.gz 
+fi
