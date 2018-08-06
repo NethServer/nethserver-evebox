@@ -20,9 +20,14 @@
 # along with NethServer.  If not, see COPYING.
 #
 
-# Downalod GeoIP db for EveBox
+# Download GeoIP db for EveBox
 
-db=/etc/evebox/GeoLite2-City.mmdb.gz
-rm -f $db
-curl -sL http://geolite.maxmind.com/download/geoip/database/GeoLite2-City.mmdb.gz -o $db
-chown suricata:suricata $db
+db=/usr/share/GeoIP/GeoLite2-City.mmdb
+rm -f /tmp/GeoLite2-City.mmdb.gz >/dev/null 2>&1
+
+curl -sL http://geolite.maxmind.com/download/geoip/database/GeoLite2-City.mmdb.gz -o /tmp/GeoLite2-City.mmdb.gz
+
+gunzip -n /tmp/GeoLite2-City.mmdb.gz
+if [ $? -eq 0 ]; then
+   mv -f /tmp/GeoLite2-City.mmdb  $db
+fi

@@ -36,9 +36,17 @@ if [ ! -f $bookmark ]; then
 fi
 
 # Download GeoIP database if doesn't exists
-if [ ! -f /etc/evebox/GeoLite2-City.mmdb.gz ]; then
+if [ ! -f /usr/share/GeoIP/GeoLite2-City.mmdb ]; then
     /etc/cron.weekly/evebox-geoip
 fi
 
 # Make sure working directory has correct permissions
 chown suricata:suricata /var/lib/evebox/
+
+
+# Aug 2018 : fix #5559
+# (you can safely remove me after a few update cycles)
+# remove db in /etc/evebox/
+if [  -f /etc/evebox/GeoLite2-City.mmdb.gz ]; then
+    rm -f /etc/evebox/GeoLite2-City.mmdb.gz 
+fi
