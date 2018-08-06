@@ -1,6 +1,6 @@
 Summary: NethServer configuration for EveBox
 Name: nethserver-evebox
-Version: 1.0.1
+Version: 1.0.2
 Release: 1%{?dist}
 License: GPL
 URL: %{url_prefix}/%{name} 
@@ -38,6 +38,9 @@ mkdir -p %{buildroot}/var/lib/evebox
 %dir %attr(0755, suricata, suricata) /var/lib/evebox
 
 %changelog
+* Mon Aug 06 2018 Giacomo Sanchietti <giacomo.sanchietti@nethesis.it> - 1.0.2-1
+- Storage Location of  GeoLite2-City.mmdb.gz - NethServer/dev#5559
+
 * Mon Apr 30 2018 Giacomo Sanchietti <giacomo.sanchietti@nethesis.it> - 1.0.1-1
 - Evebox: update to release 0.9.0 - NethServer/dev#5472
 
