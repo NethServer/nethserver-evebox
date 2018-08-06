@@ -5,4 +5,4 @@
 #
 # remove db in /etc/evebox/
 
-rm -rf /etc/evebox/GeoLite2-City.mmdb.gz >/dev/null 2>&1
+rm -f /etc/evebox/GeoLite2-City.mmdb.gz >/dev/null 2>&1
