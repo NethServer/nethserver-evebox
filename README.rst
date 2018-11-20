@@ -13,12 +13,17 @@ EveBox configuration for NethServer:
 - web interface served via reverse proxy: ``https://<host>:980/<alias>`` (see ``alias`` prop below)
 - once a week internal GeoIP database is updated by a cron job
 
+Properties:
+
+- `Retention`: positive integer, if greater than 0, events will be discarded after the given number of days 
+
 Database: ::
 
  evebox=service
     TCPPort=5636
     access=
     alias=be771675da40887ccf9eb98d05b88dc80559b6a6
+    Retention=30
     status=enabled
 
 Links

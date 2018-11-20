@@ -7,6 +7,12 @@ http:
 
 database:
   type: sqlite
+{
+    my $retention = $evebox{'Retention'};
+    if ($retention > 0) {
+        $OUT .= "  retention-period: $retention";
+    }
+}
 
 authentication:
   required: no
