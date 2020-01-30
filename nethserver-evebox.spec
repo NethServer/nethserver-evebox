@@ -9,6 +9,7 @@ BuildArch: noarch
 
 Requires: nethserver-suricata
 Requires: evebox >= 0.10.2
+Requires: geolite2-country
 
 BuildRequires: nethserver-devtools 
 
