@@ -8,7 +8,7 @@ Source0: %{name}-%{version}.tar.gz
 BuildArch: noarch
 
 Requires: nethserver-suricata
-Requires: evebox >= 0.10.2
+Requires: evebox >= 0.11.0
 Requires: geolite2-city
 
 BuildRequires: nethserver-devtools 
