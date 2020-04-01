@@ -1,6 +1,6 @@
 Summary: NethServer configuration for EveBox
 Name: nethserver-evebox
-Version: 1.2.1
+Version: 1.2.2
 Release: 1%{?dist}
 License: GPL
 URL: %{url_prefix}/%{name} 
@@ -39,6 +39,9 @@ mkdir -p %{buildroot}/var/lib/evebox
 %dir %attr(0755, suricata, suricata) /var/lib/evebox
 
 %changelog
+* Wed Apr 01 2020 Giacomo Sanchietti <giacomo.sanchietti@nethesis.it> - 1.2.2-1
+- Evebox: update to 0.11.0 - NethServer/dev#6101
+
 * Tue Feb 11 2020 Giacomo Sanchietti <giacomo.sanchietti@nethesis.it> - 1.2.1-1
 - Remove dynamic geolite support (#5)
 
