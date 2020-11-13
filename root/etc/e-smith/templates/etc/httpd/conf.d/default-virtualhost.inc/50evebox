@@ -1,0 +1,22 @@
+{
+    use esmith::ConfigDB;
+    use esmith::util;
+    my $confdb = esmith::ConfigDB->open;
+    my $evebox = $confdb->get('evebox') or die "No evebox db entry found\n";
+    my $alias = $evebox->prop('alias') || "";
+
+    # initialize alias if needed
+    if ($alias eq "") {
+        $alias = esmith::util::genRandomHash();
+        $confdb->set_prop('evebox','alias',$alias);
+    }
+
+    $OUT = "
+RewriteEngine On
+RewriteCond %{HTTP_HOST} !^localhost [NC]
+RewriteCond %{REMOTE_ADDR} !^127\.0\.0\.1\$
+RewriteCond %{HTTPS} !=on
+RewriteRule ^/$alias(/.*)?\$  https://%{HTTP_HOST}/$alias\$1  [L,R=301]
+";
+
+}
