@@ -1,6 +1,6 @@
 Summary: NethServer configuration for EveBox
 Name: nethserver-evebox
-Version: 1.2.2
+Version: 1.3.0
 Release: 1%{?dist}
 License: GPL
 URL: %{url_prefix}/%{name} 
@@ -41,6 +41,9 @@ mkdir -p %{buildroot}/etc/httpd/admin-conf.d
 %dir /etc/httpd/admin-conf.d
 
 %changelog
+* Wed Nov 18 2020 Giacomo Sanchietti <giacomo.sanchietti@nethesis.it> - 1.3.0-1
+- New NethServer 7.9.2009 defaults - NethServer/dev#6320
+
 * Wed Apr 01 2020 Giacomo Sanchietti <giacomo.sanchietti@nethesis.it> - 1.2.2-1
 - Evebox: update to 0.11.0 - NethServer/dev#6101
 
