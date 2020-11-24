@@ -28,7 +28,6 @@ rm -rf %{buildroot}
 %{genfilelist} %{buildroot} > %{name}-%{version}-filelist
 echo "%doc COPYING" >> %{name}-%{version}-filelist
 mkdir -p %{buildroot}/var/lib/evebox
-mkdir -p %{buildroot}/etc/httpd/admin-conf.d
 
 %post
 
@@ -38,7 +37,6 @@ mkdir -p %{buildroot}/etc/httpd/admin-conf.d
 %defattr(-,root,root)
 %dir %{_nseventsdir}/%{name}-update
 %dir %attr(0755, suricata, suricata) /var/lib/evebox
-%dir /etc/httpd/admin-conf.d
 
 %changelog
 * Wed Nov 18 2020 Giacomo Sanchietti <giacomo.sanchietti@nethesis.it> - 1.3.0-1
