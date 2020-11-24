@@ -17,6 +17,9 @@
         $confdb->set_prop('evebox','alias',$alias);
     }
 
+    $OUT .= "RewriteEngine on\n";
+    $OUT .= "RewriteRule ^/$alias\$ /$alias/ [R]\n";
+
     $OUT .= "<Location /$alias>\n";
     $OUT .= "    ProxyPass http://localhost:$port\n";
     $OUT .= "    ProxyPassReverse http://localhost:$port\n";
