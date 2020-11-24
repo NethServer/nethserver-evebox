@@ -4,6 +4,7 @@
     my $confdb = esmith::ConfigDB->open;
     my $evebox = $confdb->get('evebox') or die "No evebox db entry found\n";
     my $alias = $evebox->prop('alias') || "";
+    my $port = $evebox->prop('TCPPort') || "5636";
 
     # initialize alias if needed
     if ($alias eq "") {
@@ -20,3 +21,4 @@ RewriteRule ^/$alias(/.*)?\$  https://%{HTTP_HOST}/$alias\$1  [L,R=301]
 ";
 
 }
+
