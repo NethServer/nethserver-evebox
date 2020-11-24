@@ -15,9 +15,7 @@ EveBox configuration for NethServer:
 
 Properties:
 
-- ``Retention``: positive integer, if greater than 0, events will be discarded after the given number of days 
-- ``PublicAccess``: can be ``enabled`` or ``disabled``. If ``disabled``, access to evebox UI will be restricted only to trusted networks
-- ``alias``: it is a random path generated once on first install and it will be used to compose evebox UI URL.
+- `Retention`: positive integer, if greater than 0, events will be discarded after the given number of days 
 
 Database: ::
 
@@ -25,19 +23,8 @@ Database: ::
     TCPPort=5636
     access=
     alias=be771675da40887ccf9eb98d05b88dc80559b6a6
-    PublicAccess=enabled
     Retention=30
     status=enabled
-
-Restrict access
-===============
-
-As default evebox is accessible from all IP addresses.
-To restrict the access only from local and trusted networks use: ::
-
-  config setprop evebox PublicAccess disabled
-  signal-event nethserver-evebox-update
-
 
 Links
 =====
