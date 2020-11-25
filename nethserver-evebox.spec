@@ -10,6 +10,7 @@ BuildArch: noarch
 Requires: nethserver-suricata
 Requires: evebox >= 0.11.0
 Requires: geolite2-city
+Requires: nethserver-httpd-admin-service
 
 BuildRequires: nethserver-devtools 
 
