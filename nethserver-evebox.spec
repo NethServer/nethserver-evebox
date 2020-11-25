@@ -1,6 +1,6 @@
 Summary: NethServer configuration for EveBox
 Name: nethserver-evebox
-Version: 1.3.0
+Version: 1.4.0
 Release: 1%{?dist}
 License: GPL
 URL: %{url_prefix}/%{name} 
@@ -40,6 +40,9 @@ mkdir -p %{buildroot}/var/lib/evebox
 %dir %attr(0755, suricata, suricata) /var/lib/evebox
 
 %changelog
+* Wed Nov 25 2020 Giacomo Sanchietti <giacomo.sanchietti@nethesis.it> - 1.4.0-1
+- Access web applications from port 980 - NethServer/dev#6344
+
 * Wed Nov 18 2020 Giacomo Sanchietti <giacomo.sanchietti@nethesis.it> - 1.3.0-1
 - New NethServer 7.9.2009 defaults - NethServer/dev#6320
 
