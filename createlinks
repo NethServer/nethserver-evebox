@@ -37,14 +37,11 @@ event_templates($event, qw(
     /etc/evebox/evebox.yaml
     /etc/sysconfig/evebox
     /etc/httpd/admin-conf.d/evebox.conf
-    /etc/httpd/conf.d/evebox.conf
-    /etc/httpd/conf.d/default-virtualhost.inc
 ));
 
 event_services($event, 
    'evebox' => 'restart',
-   'httpd-admin' => 'reload',
-   'httpd' => 'reload'
+   'httpd-admin' => 'reload'
 );
 
 #
