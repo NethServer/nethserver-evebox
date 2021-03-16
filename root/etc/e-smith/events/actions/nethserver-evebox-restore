@@ -20,4 +20,4 @@
 # along with NethServer.  If not, see COPYING.
 #
 
-/sbin/e-smith/signal-event -j nethserver-evebox-update
+/usr/bin/systemctl restart evebox.service
