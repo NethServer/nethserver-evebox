@@ -21,4 +21,3 @@
 #
 
 /sbin/e-smith/signal-event -j nethserver-evebox-update
-/sbin/e-smith/signal-event -j nethserver-suricata-update
