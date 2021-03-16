@@ -58,6 +58,8 @@ event_services($event,
 # post-restore-data event
 #
 
-event_actions('post-restore-data', qw(
-    nethserver-evebox-restore 99
-));
+$event = 'post-restore-data';
+
+event_services($event,
+   'evebox' => 'restart',
+);
