@@ -53,3 +53,13 @@ $event = 'nethserver-suricata-save';
 event_services($event,
    'evebox' => 'restart',
 );
+
+#
+# post-restore-data event
+#
+
+$event = 'post-restore-data';
+
+event_services($event,
+   'evebox' => 'restart',
+);
