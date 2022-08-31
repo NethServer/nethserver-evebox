@@ -60,6 +60,10 @@ event_services($event,
 
 $event = 'post-restore-data';
 
+event_actions($event, 
+   'nethserver-evebox-fix-rsync-perms' => '10',
+);
+
 event_services($event,
    'evebox' => 'restart',
 );
