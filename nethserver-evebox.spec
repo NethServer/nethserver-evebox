@@ -1,6 +1,6 @@
 Summary: NethServer configuration for EveBox
 Name: nethserver-evebox
-Version: 1.4.1
+Version: 1.4.2
 Release: 1%{?dist}
 License: GPL
 URL: %{url_prefix}/%{name} 
@@ -40,6 +40,9 @@ mkdir -p %{buildroot}/var/lib/evebox
 %dir %attr(0755, suricata, suricata) /var/lib/evebox
 
 %changelog
+* Fri Sep 02 2022 Giacomo Sanchietti <giacomo.sanchietti@nethesis.it> - 1.4.2-1
+- rsync disaster recovery introduces permissions issue - Bug NethServer/dev#6691
+
 * Fri Mar 19 2021 Giacomo Sanchietti <giacomo.sanchietti@nethesis.it> - 1.4.1-1
 - Evebox. include events.sqlite in backup-data - NethServer/dev#6454
 
